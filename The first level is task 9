@@ -1,0 +1,17 @@
+using System;
+class Program
+{
+    static void Main()
+    {
+        double s = 0;
+        int sign = 1;
+        int factorial = 1;
+        for (int n = 1; n <= 6; n++)
+        {
+            s += sign * Math.Pow(5, n) / factorial;
+            sign *= -1;
+            factorial *= n + 1;
+        }
+        Console.WriteLine("суммы s: " + s);
+    }
+}
