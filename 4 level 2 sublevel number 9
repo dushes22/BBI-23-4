@@ -1,0 +1,38 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Введите количество спортсменов: ");
+        int n = Convert.ToInt32(Console.ReadLine());
+
+        if (n <= 0)
+        {
+            Console.WriteLine("Количество спортсменов должно быть больше 0.");
+            return;
+        }
+
+        double bestResult = double.MaxValue;
+
+        for (int i = 0; i < n; i++)
+        {
+            Console.Write($"Введите результат спортсмена {i + 1} на 200 м: ");
+            double result = Convert.ToDouble(Console.ReadLine());
+
+            if (result < bestResult)
+            {
+                bestResult = result;
+            }
+        }
+
+        if (bestResult == double.MaxValue)
+        {
+            Console.WriteLine("Нет введенных результатов.");
+        }
+        else
+        {
+            Console.WriteLine($"Лучший результат: {bestResult} секунд");
+        }
+    }
+}
