@@ -1,0 +1,34 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        double r1 = 70;
+        double s1 = 36.74;
+
+        double r2 = 0.86;
+        double s2 = 0.74;
+
+        double d1 = Math.Sqrt(2 * s1); 
+        double d2 = Math.Sqrt(2 * r1); 
+
+        if (d1 <= 2 * r1)
+        {
+            Console.WriteLine("Квадрат поместится в круг с r = 70");
+        }
+        else
+        {
+            Console.WriteLine("Квадрат не поместится в круг с r = 70");
+        }
+
+        if (d2 <= 2 * r2)
+        {
+            Console.WriteLine("Квадрат поместится в круг с r = 0.86");
+        }
+        else
+        {
+            Console.WriteLine("Квадрат не поместится в круг с r = 0.86");
+        }
+    }
+}
