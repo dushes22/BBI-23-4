@@ -1,0 +1,33 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int n = 0; // Количество точек
+        double r1, r2; // Радиусы кольца
+        int pointsInRing = 0; // Количество точек, попавших в кольцо
+        Console.Write("Введите количество точек: ");
+        n = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Введите внутренний радиус кольца: ");
+        r1 = Convert.ToDouble(Console.ReadLine());
+        Console.Write("Введите внешний радиус кольца: ");
+        r2 = Convert.ToDouble(Console.ReadLine());
+        for (int i = 0; i < n; i++)
+        {
+            Console.Write($"Введите координаты точки {i + 1} (x y): ");
+            string[] coordinates = Console.ReadLine().Split(' ');
+            double x = Convert.ToDouble(coordinates[0]);
+            double y = Convert.ToDouble(coordinates[1]);
+
+            double distanceToOrigin = Math.Sqrt(x * x + y * y);
+
+            if (distanceToOrigin >= r1 && distanceToOrigin <= r2)
+            {
+                pointsInRing++;
+            }
+        }
+
+        Console.WriteLine($"Количество точек, попавших в кольцо: {pointsInRing}");
+    }
+}
