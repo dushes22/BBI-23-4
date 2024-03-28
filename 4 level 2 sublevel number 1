@@ -1,0 +1,38 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int n = 0; 
+        int sumHeightBoys = 0; 
+        int sumHeightGirls = 0; 
+
+        Console.Write("Введите количество учеников в классе: ");
+        n = Convert.ToInt32(Console.ReadLine());
+
+        for (int i = 0; i < n; i++)
+        {
+            Console.Write($"Введите рост ученика {i + 1}: ");
+            int height = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write($"Введите пол ученика {i + 1} (м - мальчик, д - девочка): ");
+            char gender = Convert.ToChar(Console.ReadLine());
+
+            if (gender == 'м')
+            {
+                sumHeightBoys += height;
+            }
+            else if (gender == 'д')
+            {
+                sumHeightGirls += height;
+            }
+        }
+
+        double avgHeightBoys = (double)sumHeightBoys / n;
+        double avgHeightGirls = (double)sumHeightGirls / n;
+
+        Console.WriteLine($"Средний рост мальчиков: {avgHeightBoys}");
+        Console.WriteLine($"Средний рост девочек: {avgHeightGirls}");
+    }
+}
