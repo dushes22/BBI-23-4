@@ -1,0 +1,24 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int n = 30; // Количество участников
+        int normative = 10; // Заданный норматив
+        int athletesMeetingNormative = 0; // Количество спортсменов, выполнивших норматив
+
+        for (int i = 0; i < n; i++)
+        {
+            Console.Write($"Введите результат спортсмена {i + 1}: ");
+            int result = Convert.ToInt32(Console.ReadLine());
+
+            if (result <= normative)
+            {
+                athletesMeetingNormative++;
+            }
+        }
+
+        Console.WriteLine($"Количество спортсменов, выполнивших норматив: {athletesMeetingNormative}");
+    }
+}
