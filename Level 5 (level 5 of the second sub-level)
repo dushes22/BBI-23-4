@@ -1,0 +1,23 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int[] array = new int[] { -5, 2, -3, 7, -9, 6, -8 }; // Исходный массив
+        int maxIndex = Array.FindIndex(array, i => i == array.Max()); // индекс макс элемента
+        int minIndex = Array.FindIndex(array, i => i == array.Min()); // индекс мин элемента
+
+        // проверка на случай, если минимальный элемент находится после максимального
+        if (minIndex >= maxIndex) return;
+
+        for (int i = minIndex + 1; i < maxIndex; i++) // Перебор элементов между мин и макс
+        {
+            if (array[i] < 0) // Проверка на отриц
+                Console.Write($"{array[i]} "); // Вывод отрицательного элемента
+        }
+
+        // Добавление новой строки после вывода всех отрицательных элементов
+        Console.WriteLine();
+    }
+}
